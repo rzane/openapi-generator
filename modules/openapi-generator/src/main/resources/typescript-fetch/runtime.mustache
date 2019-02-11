@@ -183,6 +183,13 @@ export function exists(json: any, key: string) {
     return value !== null && value !== undefined;
 }
 
+export function mapValues(json: any, fn: (item: any) => any) {
+    return Object.keys(json).reduce(
+        (acc, key) => Object.assign(acc, { [key]: fn(json[key]) }),
+        {}
+    );
+}
+
 export function querystring(params: HTTPQuery) {
     return Object.keys(params)
         .map((key) => {
