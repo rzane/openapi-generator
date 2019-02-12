@@ -193,6 +193,14 @@ export function mapValues(json: any, fn: (item: any) => any) {
     );
 }
 
+export function anyToJSON(json: any) {
+    return json;
+}
+
+export function anyFromJSON(json: any) {
+    return json;
+}
+
 export function querystring(params: HTTPQuery) {
     return Object.keys(params)
         .map((key) => {
